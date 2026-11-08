@@ -1,0 +1,140 @@
+qi_condensation = {
+    category = lifestyle
+    genetic = yes
+
+    shown_in_ruler_designer = yes
+    ruler_designer_cost = 25
+
+    group = cultivation_realm
+    level = 1
+
+    life_expectancy = 5
+    prowess = 2
+    health = 0.1
+
+    tracks = {
+        subrealm = {
+            0 = {
+                life_expectancy = 5
+                prowess = 1
+            }
+            10 = {
+                life_expectancy = 5
+                prowess = 1
+            }
+            20 = {
+                life_expectancy = 5
+                prowess = 1
+            }
+            30 = {
+                life_expectancy = 5
+                prowess = 1
+                health = 0.1
+            }
+            40 = {
+                life_expectancy = 5
+                prowess = 1
+                negate_health_penalty_add = 0.25
+            }
+            50 = {
+                life_expectancy = 5
+                prowess = 1
+                health = 0.1
+            }
+            60 = {
+                life_expectancy = 5
+                prowess = 1
+            }
+            70 = {
+                life_expectancy = 5
+                prowess = 1
+            }
+            80 = {
+                life_expectancy = 10
+                prowess = 1
+                health = 0.1
+            }
+            100 = {
+                life_expectancy = 45
+                prowess = 5
+                negate_health_penalty_add = 0.25
+            }
+        }
+
+        quality = {
+            0 = {
+                prowess = 2
+            }
+            25 = {
+                prowess = 2
+            }
+            50 = {
+                prowess = 2
+            }
+            75 = {
+                prowess = 3
+            }
+            100 = {
+                prowess = 10
+            }
+        }
+    }
+}
+
+foundation_establishment = {
+    category = lifestyle
+    genetic = yes
+
+    shown_in_ruler_designer = yes
+    ruler_designer_cost = 100
+
+    group = cultivation_realm
+    level = 2
+
+    life_expectancy = 110
+    prowess = 35
+
+    tracks = {
+
+        subrealm = {
+            20 = {
+                life_expectancy = 25
+                prowess = 5
+            }
+            40 = {
+                life_expectancy = 25
+                prowess = 5
+            }
+            60 = {
+                life_expectancy = 25
+                prowess = 5
+            }
+            80 = {
+                life_expectancy = 25
+                prowess = 5
+            }
+            100 = {
+                life_expectancy = 40
+                prowess = 5
+            }
+        }
+
+        quality = {
+            25 = {
+                prowess = 6
+            }
+            50 = {
+                prowess = 6
+            }
+            75 = {
+                prowess = 6
+            }
+            95 = {
+                prowess = 9
+            }
+            100 = {
+                prowess = 30
+            }
+        }
+    }
+}

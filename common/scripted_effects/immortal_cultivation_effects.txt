@@ -1,0 +1,65 @@
+immortal_cultivation_add_xp_effect = {
+	if = {
+		limit = {
+			has_trait = qi_condensation
+		}
+
+		add_trait_xp = {
+			trait = qi_condensation
+			track = $TRACK$
+			value = $AMOUNT$
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = foundation_establishment
+		}
+
+		add_trait_xp = {
+			trait = foundation_establishment
+			track = $TRACK$
+			value = $AMOUNT$
+		}
+	}
+}
+
+immortal_cultivation_refresh_progress_effect = {
+	if = {
+		limit = {
+			story_owner = {
+				has_trait = qi_condensation
+			}
+		}
+		set_variable = {
+            name = cultivation_subrealm_xp
+            value = {
+				value = "story_owner.has_trait_xp(qi_condensation|subrealm)"
+				divide = 10
+				floor = yes
+				add = 1
+				max = 9
+				if = {
+				limit = {
+					story_owner = {
+						has_trait_xp = {
+							trait = qi_condensation
+							track = subrealm
+							value >= 100
+						}
+					}
+				}
+				add = 1
+}
+			}
+        }
+		set_variable = {
+			name = cultivation_quality_xp
+			value = {
+				value = "story_owner.has_trait_xp(qi_condensation|quality)"
+				divide = 25
+				floor = yes
+				add = 1
+			}
+		}
+	}
+}

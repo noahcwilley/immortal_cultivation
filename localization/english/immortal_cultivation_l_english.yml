@@ -1,0 +1,50 @@
+﻿l_english:
+
+ trait_qi_condensation: "Qi Condensation"
+ trait_qi_condensation_desc: "The first step on to the path of becoming an immortal cultivator."
+ trait_track_subrealm: "Subrealm"
+ trait_track_subrealm_desc: "Current progress through this cultivation realm."
+ trait_track_quality: "Quality"
+ trait_track_quality_desc: "The quality of this character's cultivation."
+
+ trait_foundation_establishment: "Foundation Establishment"
+ trait_foundation_establishment_desc: "The second step on to the path of becoming an immortal cultivator."
+
+ trait_cultivation_realm: "Cultivation"
+
+ immortal_cultivation_search_for_master_decision: "Search for a Master"
+ immortal_cultivation_search_for_master_decision_desc: "Search for a teacher in the art of immortal cultivation and begin your path!"
+ immortal_cultivation_search_for_master_decision_confirm: "Begin the Search!"
+ immortal_cultivation_search_for_master_decision_tooltip: "Search for a Master"
+ immortal_cultivation_search_for_master_effect: "You will begin the search and find a master in the art of immortal cultivation."
+
+ immortal_cultivation.0001.title: "A master has been found"
+ immortal_cultivation.0001.desc: "Do you accept the gift?"
+ immortal_cultivation.0001.accept: "Accept the Qi pill."
+ immortal_cultivation.0001.decline: "Reject the encounter."
+
+ immortal_cultivation_enter_seclusion: "Enter Seclusion"
+ immortal_cultivation_enter_seclusion_desc: "You have decided to enter seclusion and focus"
+ immortal_cultivation_enter_seclusion_tooltip: "Enter Seclusion"
+ immortal_cultivation_enter_seclusion_confirm: "Enter Seclusion"
+ 
+ immortal_cultivation_exit_seclusion: "Exit Seclusion"
+ immortal_cultivation_exit_seclusion_desc: "You have decided to exit seclusion and return to the world"
+ immortal_cultivation_exit_seclusion_tooltip: "Exit Seclusion"
+ immortal_cultivation_exit_seclusion_confirm: "Exit Seclusion"
+
+ immortal_cultivation_seclusion_story: "Seclusion"
+ immortal_cultivation_seclusion_story_desc: "You have entered seclusion to focus on your cultivation."
+ 
+ immortal_cultivation_seclusion_modifier: "In Seclusion"
+ 
+ immortal_cultivation.0002.title: "A Qi Mote Appears"
+ immortal_cultivation.0002.desc: "A Mote of overwhelmingly pure Qi has appeared in the world. You feel a strong pull towards it."
+ immortal_cultivation.0002.attempt: "Absorb the Qi Mote"
+ immortal_cultivation.0002.leave: "Ignore the Qi Mote" 
+ immortal_cultivation.0002.attempt.success: "You have successfully absorbed the Qi Mote and feel your cultivation progress."
+ immortal_cultivation.0002.attempt.failure: "You have failed to absorb the Qi Mote and feel your cultivation explode within you!"
+ immortal_cultivation.0002.attempt.success.notification: "You have successfully absorbed the Qi Mote and feel your cultivation progress."
+ immortal_cultivation.0002.attempt.success.notification.desc: "You have successfully absorbed the Qi Mote and feel your cultivation progress."
+ immortal_cultivation.0002.attempt.failure.notification: "You have failed to absorb the Qi Mote and feel your cultivation explode within you!"
+ immortal_cultivation.0002.attempt.failure.notification.desc: "You have failed to absorb the Qi Mote and feel your cultivation explode within you!"

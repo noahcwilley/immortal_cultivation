@@ -1,0 +1,78 @@
+immortal_cultivation_search_for_master_decision = {
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+    }
+
+    desc = immortal_cultivation_search_for_master_decision_desc
+
+    is_shown = {
+        is_ai = no
+        NOT = { has_trait = cultivation_realm }
+    }
+    
+    effect = {
+        custom_tooltip = immortal_cultivation_search_for_master_effect
+        trigger_event = immortal_cultivation.0001
+    }
+
+    ai_check_interval = 0
+}
+
+immortal_cultivation_enter_seclusion = {
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+    }
+
+    desc = immortal_cultivation_enter_seclusion_desc
+
+    is_shown = {
+        is_ai = no
+        has_trait = cultivation_realm
+        NOT = { has_character_flag = cultivation_seclusion }
+    }
+
+    effect = {
+        add_character_flag = cultivation_seclusion
+        if = {
+            limit = {
+                NOT = {
+                    any_owned_story = {
+                        type = immortal_cultivation_seclusion_story
+                    }
+                }
+            }
+            create_story = immortal_cultivation_seclusion_story
+        }
+        add_character_modifier = {
+            modifier = immortal_cultivation_seclusion_modifier
+        }
+    }
+
+    ai_check_interval = 0
+}
+
+immortal_cultivation_exit_seclusion = {
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+    }
+
+    desc = immortal_cultivation_exit_seclusion_desc
+
+    is_shown = {
+        is_ai = no
+        has_character_flag = cultivation_seclusion
+    }
+    
+    effect = {
+        remove_character_flag = cultivation_seclusion
+        every_owned_story = {
+            limit = {
+                story_type = immortal_cultivation_seclusion_story
+            }
+            end_story = yes
+        }
+        remove_character_modifier = immortal_cultivation_seclusion_modifier
+    }
+
+    ai_check_interval = 0
+}

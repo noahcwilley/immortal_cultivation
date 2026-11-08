@@ -1,0 +1,137 @@
+namespace = immortal_cultivation
+
+#Find A Master Event
+immortal_cultivation.0001 = {
+    type = character_event
+    title = immortal_cultivation.0001.title
+    desc = immortal_cultivation.0001.desc
+    theme = immortal_cultivation_qi_mote
+
+    immediate = {
+        create_character = {
+            template = garden_hermit_character
+            faith = root.faith
+            rite = root.rite
+            culture = root.culture
+            location = root.location
+            trait = qi_condensation
+            save_scope_as = cultivation_master
+        }
+
+        hidden_effect = {
+            scope:cultivation_master = {
+                immortal_cultivation_add_xp_effect = {
+                    TRACK = subrealm
+                    AMOUNT = 90
+                }
+                immortal_cultivation_add_xp_effect = {
+                    TRACK = quality
+                    AMOUNT = 75
+                }
+            }
+        }
+    }
+
+    right_portrait = {
+        character = scope:cultivation_master
+    }
+
+    left_portrait = {
+        character = root
+    }
+
+    option = {
+        name = immortal_cultivation.0001.accept
+        add_trait = qi_condensation
+    }
+
+    option = {
+        name = immortal_cultivation.0001.decline
+    }
+}
+
+immortal_cultivation.0002 = {
+    type = character_event
+    title = immortal_cultivation.0002.title
+    desc = immortal_cultivation.0002.desc
+    theme = immortal_cultivation_qi_mote
+
+    trigger = {
+        has_trait = qi_condensation
+        NOT = { has_character_flag = cultivation_seclusion }
+    }
+
+    option = {
+        name = immortal_cultivation.0002.attempt
+        random_list = {
+            70 = {
+                modifier = {
+                    factor = 1.5
+
+                    has_trait_xp = {
+                        trait = qi_condensation
+                        track = subrealm
+                        value >= 10
+                    }
+                }
+
+                modifier = {
+                    factor = 1.5
+
+                    has_trait_xp = {
+                        trait = qi_condensation
+                        track = quality
+                        value >= 50
+                    }
+                }
+
+                immortal_cultivation_add_xp_effect = {
+                    TRACK = subrealm
+                    AMOUNT = 100
+                }
+                if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = qi_condensation
+                            track = quality
+                            value < 50
+                        }
+                    }
+                    add_trait_xp = {
+                        trait = qi_condensation
+                        track = quality
+                        value = {
+                            value = 50
+                            subtract = "has_trait_xp(qi_condensation|quality)"
+                        }
+                    }
+                }
+
+                desc = immortal_cultivation.0002.attempt.success
+
+                send_interface_toast = {
+                    type = event_toast_effect_good
+                    title = immortal_cultivation.0002.attempt.success.notification
+                    custom_tooltip = immortal_cultivation.0002.attempt.success.notification.desc
+                    left_icon = root
+                }
+            }
+            30 = {
+                death = {
+                    death_reason = death_accident
+                }
+                desc = immortal_cultivation.0002.attempt.failure
+                send_interface_toast = {
+                    type = event_toast_effect_bad
+                    title = immortal_cultivation.0002.attempt.failure.notification
+                    custom_tooltip = immortal_cultivation.0002.attempt.failure.notification.desc
+                    left_icon = root
+                }
+            }
+        }
+    }
+
+    option = {
+        name = immortal_cultivation.0002.leave
+    }
+}

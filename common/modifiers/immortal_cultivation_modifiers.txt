@@ -1,0 +1,5 @@
+immortal_cultivation_seclusion_modifier = {
+	icon = diplomacy_negative
+	general_opinion = -10
+	monthly_lifestyle_xp_gain_mult = -0.15
+}

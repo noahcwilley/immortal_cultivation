@@ -1,0 +1,16 @@
+quarterly_playable_pulse = {
+	on_actions = {
+		immortal_cultivation_pulse
+	}
+}
+
+immortal_cultivation_pulse = {
+	trigger = {
+		is_ai = no
+	}
+
+	random_events = {
+		chance_to_happen = 20
+		100 = immortal_cultivation.0002
+	}
+}

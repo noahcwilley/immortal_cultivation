@@ -1,0 +1,52 @@
+immortal_cultivation_seclusion_story = {
+	visible = yes
+
+	background = {
+    	reference = "gfx/interface/illustrations/story_cycles/cultivation_seclusion.dds"
+	}
+
+	icon = {
+    reference = "gfx/interface/icons/story_cycles/immortal_cultivation_seclusion_story.dds"
+	}
+
+	on_setup = {
+		immortal_cultivation_refresh_progress_effect = yes
+	}
+
+	visualization = {
+		basic_counter = {
+			variable_name = "cultivation_subrealm_xp"
+			min = 1
+			max = 10
+			label = "trait_track_subrealm"
+		}
+		basic_counter = {
+			variable_name = "cultivation_quality_xp"
+			min = 1
+			max = 5
+			label = "trait_track_quality"
+		}
+	}
+
+	effect_group = {
+		months = 1
+		
+		triggered_effect = {
+			trigger = {
+				story_owner = {
+					has_character_flag = cultivation_seclusion
+				}
+			}
+			effect = {
+				story_owner = {
+					immortal_cultivation_add_xp_effect = {
+						TRACK = subrealm
+						AMOUNT = 1
+					}
+				}
+				immortal_cultivation_refresh_progress_effect = yes
+			}
+			
+		}
+	}
+}
