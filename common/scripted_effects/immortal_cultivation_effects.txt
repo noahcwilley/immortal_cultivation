@@ -63,3 +63,64 @@ immortal_cultivation_refresh_progress_effect = {
 		}
 	}
 }
+
+immortal_cultivation_initialize_qi_effect = {
+	if = {
+		limit = {
+			has_trait = cultivation_realm
+			NOT = { has_variable = immortal_cultivation_current_qi }
+		}
+		
+		set_variable = {
+			name = immortal_cultivation_current_qi
+			value = immortal_cultivation_max_qi_value
+		}
+	}
+}
+
+immortal_cultivation_add_qi_effect = {
+	if = {
+		limit = {
+			has_trait = cultivation_realm
+		}
+
+		immortal_cultivation_initialize_qi_effect = yes
+
+		set_variable = {
+			name = immortal_cultivation_current_qi
+			value = {
+				value = var:immortal_cultivation_current_qi
+				add = {
+					value = immortal_cultivation_max_qi_value
+					divide = 5
+
+					if = {
+						limit = {
+							has_character_flag = cultivation_seclusion
+						}
+						multiply = 1.5
+					}
+				}
+
+				max = immortal_cultivation_max_qi_value
+			}
+		}
+	}
+}
+
+immortal_cultivation_start_qi_recovery_effect = {
+	immortal_cultivation_initialize_qi_effect = yes
+
+	if = {
+		limit = {
+			has_trait = cultivation_realm
+			NOT = {
+				any_owned_story = {
+					type = immortal_cultivation_qi_recovery_story
+				}
+			}
+		}
+
+		create_story = immortal_cultivation_qi_recovery_story
+	}
+}

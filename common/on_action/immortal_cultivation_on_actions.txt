@@ -14,3 +14,21 @@ immortal_cultivation_pulse = {
 		100 = immortal_cultivation.0002
 	}
 }
+
+on_trait_gained = {
+	on_actions = {
+		immortal_cultivation_on_realm_gained
+	}
+}
+
+immortal_cultivation_on_realm_gained = {
+	trigger = {
+		scope:trait = {
+			has_trait_flag = immortal_cultivation_realm_trait
+		}
+	}
+
+	effect = {
+		immortal_cultivation_start_qi_recovery_effect = yes
+	}
+}

@@ -1,0 +1,1 @@
+immortal_cultivation_max_qi_value = 100

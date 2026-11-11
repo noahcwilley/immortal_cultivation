@@ -50,3 +50,27 @@ immortal_cultivation_seclusion_story = {
 		}
 	}
 }
+
+immortal_cultivation_qi_recovery_story = {
+	visible = no
+	effect_group = {
+    months = 1
+
+    triggered_effect = {
+        trigger = {
+            story_owner = {
+                has_trait = cultivation_realm
+            }
+        }
+
+        effect = {
+            story_owner = {
+                immortal_cultivation_add_qi_effect = yes
+            }
+        }
+    }
+}
+	on_owner_death = {
+		end_story = yes
+	}
+}
